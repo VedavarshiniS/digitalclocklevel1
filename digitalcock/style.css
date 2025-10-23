@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Courier New', monospace;
+  background-color: #cb22a4;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #a96363,
+    #1a1a1a 20px,
+    #06212d 20px,
+    #3395be 40px
+  );
+  color: #960d8a;
+}
+
+
+#clock-container {
+  padding: 20px 40px;
+  border: 3px solid #0a0e10;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #0a7689, #fafcfd); /* colorful gradient */
+  box-shadow: 0 0 30px #f7508d;
+  text-align: center;
+}
+
+#clock {
+  font-size: 80px;
+  letter-spacing: 10px;
+  color: #0d0d0d;
+  text-shadow: 2px 2px 10px #100503;
+   font-family: 'Roboto Mono', monospace;
+}
+
+
+.blink {
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
