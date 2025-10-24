@@ -1,0 +1,103 @@
+:root {
+  --bg1: #000701;
+  --bg2: #021502;
+  --neon1: #48f;
+  --neon2: #a66aeb;
+  --inactive: rgba(255,255,255,0.05);
+  --size: min(90vw, 950px);
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: radial-gradient(circle at 25% 25%, var(--bg2), var(--bg1) 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass-panel {
+  width: var(--size);
+  padding: 2rem;
+  border-radius: 30px;
+  backdrop-filter: blur(12px);
+  background: rgba(80, 2, 2, 0.05);
+  border: 1px solid rgba(81, 2, 2, 0.1);
+  box-shadow: 0 0 30px rgba(3, 33, 70, 0.1), inset 0 0 15px rgba(255,255,255,0.04);
+  display: flex;
+  justify-content: center;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+/* Each SVG digit */
+.digit {
+  width: calc(var(--size) / 9);
+  max-width: 160px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.digit:hover {
+  transform: scale(1.05);
+}
+
+/* Colon */
+.colon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20%;
+  align-items: center;
+}
+.colon-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, var(--neon1));
+  box-shadow: 0 0 16px var(--neon1), 0 0 40px var(--neon1);
+  animation: blink 1.2s infinite alternate;
+}
+@keyframes blink {
+  from { opacity: 0.2; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.1); }
+}
+
+/* Segment Base */
+.segment {
+  fill: var(--inactive);
+  transition: fill 0.3s ease, opacity 0.3s ease;
+  opacity: 0.4;
+}
+
+/* Active Segment Glow */
+.segment.on {
+  fill: url(#gradAnimated);
+  opacity: 1;
+  filter: drop-shadow(0 0 8px var(--neon1)) drop-shadow(0 0 16px var(--neon2));
+  animation: pulse 2s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%, 100% { filter: drop-shadow(0 0 6px var(--neon1)) drop-shadow(0 0 14px var(--neon2)); }
+  50% { filter: drop-shadow(0 0 16px var(--neon2)) drop-shadow(0 0 32px var(--neon1)); }
+}
+
+/* Gradient animation for active segments */
+@keyframes gradientMove {
+  0% { stop-color: var(--neon1); }
+  50% { stop-color: var(--neon2); }
+  100% { stop-color: var(--neon1); }
+}
