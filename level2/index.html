@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seven Segment DIV Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="clock-container">
+    <div class="clock-wrap" id="clock">
+      <!-- Hours tens -->
+      <div class="digit" data-pos="0">
+        <div class="segment a"></div>
+        <div class="segment b"></div>
+        <div class="segment c"></div>
+        <div class="segment d"></div>
+        <div class="segment e"></div>
+        <div class="segment f"></div>
+        <div class="segment g"></div>
+      </div>
+
+      <!-- Hours units -->
+      <div class="digit" data-pos="1">
+        <div class="segment a"></div>
+        <div class="segment b"></div>
+        <div class="segment c"></div>
+        <div class="segment d"></div>
+        <div class="segment e"></div>
+        <div class="segment f"></div>
+        <div class="segment g"></div>
+      </div>
+
+      <div class="colon">
+        <div class="dot" id="colon-top"></div>
+        <div class="dot" id="colon-bottom"></div>
+      </div>
+
+      <!-- Minutes tens -->
+      <div class="digit" data-pos="2">
+        <div class="segment a"></div>
+        <div class="segment b"></div>
+        <div class="segment c"></div>
+        <div class="segment d"></div>
+        <div class="segment e"></div>
+        <div class="segment f"></div>
+        <div class="segment g"></div>
+      </div>
+
+      <!-- Minutes units -->
+      <div class="digit" data-pos="3">
+        <div class="segment a"></div>
+        <div class="segment b"></div>
+        <div class="segment c"></div>
+        <div class="segment d"></div>
+        <div class="segment e"></div>
+        <div class="segment f"></div>
+        <div class="segment g"></div>
+      </div>
+
+      <div class="colon">
+        <div class="dot" id="colon-top-2"></div>
+        <div class="dot" id="colon-bottom-2"></div>
+      </div>
+
+      <!-- Seconds tens -->
+      <div class="digit" data-pos="4">
+        <div class="segment a"></div>
+        <div class="segment b"></div>
+        <div class="segment c"></div>
+        <div class="segment d"></div>
+        <div class="segment e"></div>
+        <div class="segment f"></div>
+        <div class="segment g"></div>
+      </div>
+
+      <!-- Seconds units -->
+      <div class="digit" data-pos="5">
+        <div class="segment a"></div>
+        <div class="segment b"></div>
+        <div class="segment c"></div>
+        <div class="segment d"></div>
+        <div class="segment e"></div>
+        <div class="segment f"></div>
+        <div class="segment g"></div>
+      </div>
+    </div>
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
