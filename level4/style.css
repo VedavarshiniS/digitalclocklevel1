@@ -1,28 +1,35 @@
+/* 🌌 Global Styles */
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background: repeating-linear-gradient(to bottom, #030339, #fcfdff);
+  background: linear-gradient(to bottom, #030339, #fcfdff);
   color: #dfe8ff;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding: 2rem;
+  padding: 1rem;
 }
 
+/* 🕒 Title */
 h1 {
   margin-bottom: 2rem;
   text-align: center;
+  font-size: 3rem;
 }
 
+/* 🧭 Clock Grid */
 .clock-grid {
   display: grid;
-  grid-template-rows: repeat(auto-fit, minmax(220px));
+  grid-template-columns: repeat(auto-fit, minmax(250px)); /* ✅ Flexible grid */
   gap: 1.5rem;
-  
-  -ms-grid-row-align: center;
+  width: 80%;
+  max-width: 700;
+  justify-items: center;
+  transition: all 0.3s ease;
 }
 
+/* ⏰ Individual Clock Card */
 .clock-card {
   background: rgba(20, 30, 60, 0.7);
   padding: 1.5rem;
@@ -32,24 +39,108 @@ h1 {
   align-items: center;
   box-shadow: 0 0 20px rgba(72,144,255,0.3);
   width: 100%;
-  height: 100px;
+  height: 180px;
+  transition: all 0.3s ease;
 }
 
+/* Hover Effect */
+.clock-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(100,160,255,0.5);
+}
+
+/* 🏙️ City Label */
 .city-label {
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
+/* ⏱️ Time Display */
 .time {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   font-family: "Courier New", monospace;
   margin-bottom: 0.3rem;
+  text-align: center;
 }
 
+/* ☀️🌙 Day/Night Indicator */
 .day-night {
-  font-size: 1rem;
+  font-size: 1.2rem;
   opacity: 0.8;
 }
+
+
+
+  
+
+/* 📱 Responsive Design */
+
+/* 🧩 Medium screens (tablets or minimized window)
+   → Show exactly 2 columns */
+@media (max-width: 900px) {
+  .clock-grid {
+    grid-template-columns: repeat(3, 1fr); /* ✅ Two columns */
+   gap: 2rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .city-label {
+    font-size: 1.6rem;
+  }
+
+  .time {
+    font-size: 2.3rem;
+  }
+
+  .day-night {
+    font-size: 1.1rem;
+  }
+  
+  
+    
+  
+ 
+}
+
+/* 📱 Small screens (phones)
+   → Switch to single column */
+@media (max-width: 550px) {
+  .clock-grid {
+    grid-template-columns: 1fr; /* ✅ Single column layout */
+   gap: 1.2rem;
+  }
+
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .clock-card {
+    height: 140px;
+    padding: 1rem;
+  
+  }
+
+  .city-label {
+    font-size: 1.3rem;
+  }
+
+  .time {
+    font-size: 1.8rem;
+  }
+
+  .day-night {
+    font-size: 1rem;
+  }
+}
+
 
